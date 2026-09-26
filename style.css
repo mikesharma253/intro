@@ -1,0 +1,127 @@
+:root{
+    --bg: black;
+    --bg-panel: black;
+    --bg-panel-2: black;
+    --fg: white;
+    --fg-dim: white;
+    --accent: yellow;
+    --accent-dim: yellow;
+    --line: blue;
+    --line-soft: grey;
+    --font-display: "space grotesk", sans-serif;
+    --font-mono: "JetBrain Mono", monospace;
+}
+
+*{box-sizing: border-box; }
+
+html{ scroll-behavior: smooth;}
+
+html, body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-mono);
+}
+
+body{
+    background-image:
+        linear-gradient(var(--line-soft) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: -1px -1px;
+}
+
+a{ color: blueviolet }
+::selection { background: var(--accent); color: black }
+
+h1, h2 { font-family: var(--font-display); font-weight: 700; margin: 0; }
+
+/* hell yeeeeehh part */
+.crosshair {
+    position:fixed;
+    top: 0; left: 0;
+    width: 22px; height: 22px;
+    pointer-events: none;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.crosshair::before, .crosshair::after {
+    content:"";
+    position: absolute;
+    background: var(--aacent);
+}
+.crosshair::before { top: 50%; left: 0; right: 0; height: 1px; transform: traslateY(-50%);}
+.crosshair::after { left: 50%; top: 0; bottom:0; width: 1px; transform: translateX(-50%);}
+.crosshair-coords{
+    position: absolute;
+    top: 14px; left: 14px;
+    font-size: 0.65rem;
+    color: var(--accent);
+    white-space: nowrap;
+    opacity: 0.85;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .crosshair { display: block; }
+}
+
+/* i'll commit in a minute */
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 6vw;
+    background: green;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid va(--line);
+}
+
+.nav-mark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--fg);
+    letter-spacing: 0.02em;
+}
+
+.site-nav nav { display: flex; gap: 30px; }
+
+.site-nav nav a {
+    text-decoration: none;
+    color: var(--fg-dim);
+    font-size: 0.82rem;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+.site-nav nav a.hover, .site-nav nav a.active { color: var(--accent); }
+
+.site-nav nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 1px;
+    background: var(--accent);
+}
+
+.nav-staus {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.76rem;
+    color: var(--fd-dim);
+}
+
+.status-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+}

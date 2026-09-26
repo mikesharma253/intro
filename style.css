@@ -1,9 +1,9 @@
 :root{
-    --bg: black;
-    --bg-panel: black;
-    --bg-panel-2: black;
-    --fg: white;
-    --fg-dim: white;
+    --bg: rgb(24, 17, 17);
+    --bg-panel: rgb(255, 50, 50);
+    --bg-panel-2: rgb(255, 52, 52);
+    --fg: rgb(2, 19, 255);
+    --fg-dim: rgb(0, 0, 0);
     --accent: yellow;
     --accent-dim: yellow;
     --line: blue;
@@ -31,7 +31,7 @@ body{
     background-position: -1px -1px;
 }
 
-a{ color: blueviolet }
+a{ color: rgb(33, 6, 235) }
 ::selection { background: var(--accent); color: black }
 
 h1, h2 { font-family: var(--font-display); font-weight: 700; margin: 0; }
@@ -76,7 +76,7 @@ h1, h2 { font-family: var(--font-display); font-weight: 700; margin: 0; }
     justify-content: space-between;
     gap: 24px;
     padding: 20px 6vw;
-    background: green;
+    background: rgb(0, 28, 242);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid va(--line);
 }
@@ -124,4 +124,48 @@ h1, h2 { font-family: var(--font-display); font-weight: 700; margin: 0; }
     border-radius: 50%;
     background: var(--accent);
     animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse { 0%, 100% { opacity: 1;} 50% { opacity: 0.35;} }
+
+/* now our first looks */
+.hero {
+    position:relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 14vh 6vw 10vh;
+    overflow:hidden;
+}
+
+.grid-backdrop {
+    position: absolute;
+    top: -20%; right: -10%;
+    width: 460px; height: 460px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    opacity: 0.4;
+    pointer-events: auto;
+    cursor: default;
+    transition: border-color 0.3s ease, opacity 0.3s ease;
+}
+.grid-background:hover {
+    border-color: var(--accent);
+    opacity: 0.9
+}
+.grid-backdrop::before {
+    content:"";
+    position: absolute;
+    inset: 60px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    transition: border-color 0.3s ease;
+}
+.grid-backdrop:hover::before {
+    border-color: var(--accent);
+}
+
+.sheet-label {
+    font-size: 0.78rem;
+    color: var(--fg-dim);
+    
 }

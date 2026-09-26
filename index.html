@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIKE _ A Frontend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="crosshair" id="crosshair" aria-hidden="true">
+  <span class="crosshair-coords" id="crosshair-coords">000, 000</span>
+</div>
+
+<header class="site-nav">
+  <a href="#hero" class="nav-mark">MISSION LAPPY</a>
+  <nav id="nav-links">
+    <a href="#about" data-section="about">about</a>
+    <a href="#skills" data-section="skills">skills</a>
+    <a href="#projects" data-section="projects">Projects</a>
+    <a href="#contact" data-section="contact">contact</a>
+  </nav>
+  <div class="nav-status">
+    <span class="status-dot"></span>
+    <span>open to work</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- yeeeeeeeeeeeeeeee -->
+  <section id="hero" class="hero">
+    <div class="grid-backdrop" aria-hidden="true"></div>
+    <p class="sheet-label">sheet 01 - elevation</p>
+    <h1 class="hero-title">mike</h1>
+    <p class="hero-role">frontier developer, under construction</p>
+    <p class="hero-copy">
+      Hey guys! Mike here umm&hellip; can call me Aditya too :]
+      Career changing into imagination&hellip; don't know what's happening anymore. but one thing not giving up
+      also not giving up on software, because you know&hellip; hardware is hard.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-solid">take a look here!</a>
+      <a href="#contact" class="btn btn-ghost">wanna talk</a>
+    </div>
+
+    <dl class="title-block">
+      <div><dt>made by <s>AI</s></dt><dd>mike</dd></div>
+      <div><dt>status</dt><dd>99.9% done</dd></div>
+    </dl>
+  </section>
+
+  <!-- I AM IRONMAN hihi -->
+  <section id="about" class="section">
+    <p class="section-label">|</p>
+    <h2>About</h2>
+    <div class="about-grid">
+      <p class="about-copy">
+        ME=MIKE--- a class 11 student, trader, coder, and builder.
+        |
+        !-&gt; learning software, working on projects, getting into hardware, always get deflated hours,
+        now see what about me and figuring out where all thing going.
+      </p>
+
+      <ul class="spec-list">
+        <li><span>INTEREST</span><span>software</span></li>
+        <li><span>COMING SOON</span><span>COMEBACK</span></li>
+        <li><span>AIM</span><span>getting a laptop of my own</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- specialities_____I_ALSO_HAVE_ONE_____ -->
+  <section id="skills" class="section">
+    <p class="section-label">||</p>
+    <h2>skills</h2>
+    <div class="measure-group" id="measure-group">
+      <div class="measure-row" data-value="75">
+        <span class="measure-name">HTML</span>
+        <div class="measure-track"><div class="measure-fill"></div></div>
+        <span class="measure-value">75%</span>
+      </div>
+      <div class="measure-row" data-value="72">
+        <span class="measure-name">CSS</span>
+        <div class="measure-track"><div class="measure-fill"></div></div>
+        <span class="measure-value">72%</span>
+      </div>
+      <div class="measure-row" data-value="60">
+        <span class="measure-name">JavaScript</span>
+        <div class="measure-track"><div class="measure-fill"></div></div>
+        <span class="measure-value">60%</span>
+      </div>
+      <div class="measure-row" data-value="30">
+        <span class="measure-name">PYTHON</span>
+        <div class="measure-track"><div class="measure-fill"></div></div>
+        <span class="measure-value">30%</span>
+      </div>
+    </div>
+    <p class="skills-note">giving my best because i have an unfair advantage here. i'm below 16 in 2026, which means i'm working before my time.</p>
+  </section>
+
+  <!-- achievements here guysssssssssssss!!!!!! -->
+  <section id="projects" class="section">
+    <p class="section-label">|||</p>
+    <h2>PROJECTS --MOST OF THEM ARE REJECTED--</h2>
+
+    <div class="filter-row" id="filter-row">
+      <button class="filter-btn active" data-filter="all">all</button>
+      <button class="filter-btn" data-filter="software">software</button>
+      <button class="filter-btn" data-filter="hardware">hardware</button>
+    </div>
+
+    <div class="project-grid" id="project-grid"></div>
+  </section>
+
+  <!-- contact -->
+  <section id="contact" class="section">
+    <p class="section-label">||||</p>
+    <h2>contact</h2>
+    <p class="contact-intro">have a project, a job, or just a bug to report? Leave a note</p>
+
+    <form id="contact-form" class="contact-form" novalidate>
+      <div class="field">
+        <label for="name">NAME</label>
+        <input type="text" id="name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="email">EMAIL</label>
+        <input type="email" id="email" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="message">DROP IT</label>
+        <textarea id="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-solid">what's your problem dude</button>
+      <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <p>BUILD BY --- MIKE --- HTML : CSS : JAVASCRIPT</p>
+  <p class="foot-rev">lammu</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+<!-- helllll over dude this took way more then it should be -->
+<!-- btw i am goig for css next 
+ so byeeeeeeeeeeeeee -->
+ 

@@ -167,5 +167,43 @@ h1, h2 { font-family: var(--font-display); font-weight: 700; margin: 0; }
 .sheet-label {
     font-size: 0.78rem;
     color: var(--fg-dim);
-    
+    letter-spacing: 0.03em;
+    margin: 0 0 22px;
+}
+
+.hero-title {
+    font-size: clamp(3.4rem, 0vw, 7rem);
+    line-height: 0.95;
+    color: var(--fg);
+}
+
+.hero-title-dot { color: var(--accent);}
+
+.hero-role {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--fg-dim);
+    margin: 14px 0 26px;
+}
+
+.hero-copy {
+    max-width: 56ch;
+    line-height: 1.7;
+    color: var(--fg-dim);
+    font-size: 0.95rem;
+    margin: 0 0 44px;
+}
+
+.hero-action { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 70px; }
+
+.btn {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-decoration: none;
+    padding: 13px 26px;
+    border: 1px solid var(--line);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    display: inline-block;
 }

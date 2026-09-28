@@ -1,5 +1,5 @@
 :root{
-    --bg: rgb(24, 17, 17);
+    --bg: rgb(255, 180, 5);
     --bg-panel: rgb(255, 50, 50);
     --bg-panel-2: rgb(255, 52, 52);
     --fg: rgb(2, 19, 255);
@@ -277,9 +277,9 @@ h1, h2 { font-family: var(--font-display); font-weight: 700; margin: 0; }
 /* i'm lowkey damged going for repair */
 .measure-group { display: flex; flex-direction: column; gap: 22px; margin-bottom: 20px; }
 
-.measure-row { display: grid; grid-template-columns: 140px 1fr 48px; align-item: center; gap: 18px; }
+.measure-row { display: grid; grid-template-columns: 140px 1fr 48px; align-items: center; gap: 18px; }
 
-.measure-name { font-size: 0.85rem; color: var(--fg;); }
+.measure-name { font-size: 0.85rem; color: var(--fg); }
 
 .measure-track {
     position: relative;
@@ -294,7 +294,7 @@ h1, h2 { font-family: var(--font-display); font-weight: 700; margin: 0; }
     background: var(--line);
 }
 .measure-track::before {left: 0; }
-.measure-track::after {right: 0; }\
+.measure-track::after {right: 0; }
 
 .measure-fill{
     position: absolute;
@@ -324,7 +324,7 @@ h1, h2 { font-family: var(--font-display); font-weight: 700; margin: 0; }
 }
 
 .filter-btn:hover { color: var(--fg); }
-.filter-btn.active { color: var--accent); border-color: var(--accent); }
+.filter-btn.active { color: var(--accent); border-color: var(--accent); }
 
 .project-grid {
     display: grid;
@@ -345,4 +345,54 @@ h1, h2 { font-family: var(--font-display); font-weight: 700; margin: 0; }
 .project-card.hidden { display: none; }
 
 .project-fig { font-size: 0.72rem; color: var(--font-display)}
-    
+
+.project-title {
+    font-family: var(--font-display);
+    font-weight: 1.2rem;
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+}
+
+.project-desc { font-size: 0.84rem; line-height: 1.6; color: var(--fg-dim); margin:0 0 16px; }
+
+.project-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.project-tags span {
+    font-size: 0.68rem;
+    color: var(--accent);
+    border: 1px solid var(--accent-dim);
+    padding: 3px 8px;
+}
+
+/* now contact */
+.contact-intro { color: var(--fg-dim); font-size: 0.95rem; margin: 0 0 36px; }
+
+.contact-form { display: flex; flex-direction: column; gap: 22px; max-width: 0 0 36px;}
+
+.field { display: flex; flex-direction: column; gap: 8px; }
+
+label { font-size: 0.78rem; color: var(--fg-dim); }
+
+input, textarea {
+    background: var(--bg-panel-2);
+    border: 1px solid var(--line);
+    color: var(--font-mono);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    padding: 11px 22px;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus { outline: none; border-color: var(--accent);}
+
+.feild.invalid input, .feild.invalid textarea { border-color: aqua;}
+
+.contact-form .btn {align-self: flex-start; }
+
+.form-status { font-size: 0.82rem; color: var(--fg-dim); min-height: 1.2em; margin: 0; }
+.form-status.success { color: var(--accent);}
+
+
+/* why time is not timming lol */
+ 

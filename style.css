@@ -1,13 +1,13 @@
 :root{
-    --bg: rgb(0, 0, 0);
-    --bg-panel: rgb(255, 253, 253);
-    --bg-panel-2: rgb(255, 52, 52);
-    --fg: rgb(2, 19, 255);
-    --fg-dim: rgb(0, 255, 21);
-    --accent: yellow;
-    --accent-dim: yellow;
-    --line: blue;
-    --line-soft: grey;
+    --bg: #0D0D0D;
+    --bg-panel: #1A0B1F;
+    --bg-panel-2: #24102B;
+    --fg: #FF7518;
+    --fg-dim: #C98F62;
+    --accent: #FF7518;
+    --accent-dim: #A020F0;
+    --line: #6A1B9A;
+    --line-soft: #32163D;
     --font-display: "space grotesk", sans-serif;
     --font-mono: "JetBrain Mono", monospace;
 }

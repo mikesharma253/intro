@@ -43,7 +43,7 @@ document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el))
 // skill issue-----------------------------------------------------------------------------------------------
 const measureRows = document.querySelectorAll('.measure-row');
 const measureObserver = new IntersectionObserver((entries) => {
-    entries.foreach((entry) => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const row = entry.target;
           const fill = row.querySelector('.measure-fill');
@@ -79,8 +79,8 @@ const PROJECTS = [
     title: 'The Alpha trader \u2014 Palette',
     desc: '========================================================================================.',
     tags: ['design', 'color'],
-    category: 'visual'
-  }
+    category: 'visual',
+  },
   {
     title:'The Alpha Trader \u2014 palette',
     desc: '-----------------------------------------------------------------------------------------',
@@ -88,3 +88,75 @@ const PROJECTS = [
     category: 'visual'
   }
 ];
+
+const grid = document.getElementById('project-grid');
+
+function renderProjects() {
+  grid.innerHTML = '';
+  PROJECTS.forEach((p, i) => {
+    const card = document.createElement('article');
+    card.className = 'project-card';
+    card.dataset.category = p.category;
+    card.innerHTML =
+      '<p class="project-fig">|||' + String(i + 1).padStart(2, '0') + '</p>' +
+      '<h3class="project-title">' + p.desc + '</h3>' +
+      '<p class="project-desc">' + p.desc + '</p>' +
+      '<div class="project-tags">' + p.tags.map((t) => '<span>' + t + '</span').join('') + '</div>';
+    grid.appendChild(card);
+  });
+}
+renderProjects();
+
+// favourate thing of women--------- filter //
+const filterButtons = document.querySelectorAll('.filter-btn');
+filterButtons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    filterButtons.forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.project-card').forEach((card) => {
+     const show = filter === 'all' || card.dataset.filter;
+     card.classList.toggle('hidden', !show);
+    });
+  });
+});
+
+// contact form
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+const submitBtn = form.querySelector('button[type="submit"]')
+
+function validateField(field) {
+  const wrapper = field.closest('.field');
+  const valid = field.checkvalidity();
+  wrapper.classList.toggle('invalid', !valid);
+  return valid;
+}
+
+form.querySelectorAll('input, textarea').forEach((field) => {
+  field.addEventListener('blur',() => validateField(field));
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const fields = Array.form(form.querySelectorAll('input, textarea'));
+  const allValid = field.map(validatefield).every(boolean);
+
+  if (!allValid) {
+    status.textcontent = 'Check the highlighted fields before sending.';
+    status.classList.remove('sucess');
+    return;
+  }
+
+  submitBtn.disabled = true;
+  status.textContent = 'Sending\u2026';
+  status.classList.remove('success');
+
+  // send \u2014 wire this up to a real backend -----------ufff
+  setTimeout(() => {
+    status.textContent = 'message send. Thanks for reaching out.';
+    status.classList.add('success');
+    submitBtn.disabled = false;
+    form.requestFullscreen();
+  }, 1000);
+});

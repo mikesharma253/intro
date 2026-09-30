@@ -484,4 +484,4 @@ input:focus, textarea:focus { outline: none; border-color: var(--accent);}
     html { scroll-behavior: auto;}
     .reveal { opacity: 1; transform:none; transition: none; }
     .measure-fill { transition: none;}
-}
+} 

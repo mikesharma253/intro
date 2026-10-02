@@ -57,12 +57,12 @@ measureRows.forEach((row) => measureObserver.observe(row));
 
 // 0now the rendering part
 const PROJECTS = [
-  {
-    title: 'particle Visualizer',
-    desc: 'A  gesture-controlled particle field build with Three.js and mediaPipe Hands \u2014 move a hand in front of the camera and the particles bend toward it.',
-    tags: ['Three.js', 'mediaPipe'],
-    category: 'interactive'
-  },
+{
+  title: 'KEYS',
+  desc: 'A keychain made by me but in HALLOWEEN THEMED, NAMED AS---XAUUSD',
+  tags: ['FIGMA', 'ONSHAPE'],
+  category: 'hardware'
+},
   {
     title: 'reality.exe',
     desc: 'A cinematic fake operating system running entirely in one HTML file \u2014 CRT effects, draggable windows, mini-games, and an AI that slowly became self-aware.',
@@ -99,7 +99,7 @@ function renderProjects() {
     card.dataset.category = p.category;
     card.innerHTML =
       '<p class="project-fig">|||' + String(i + 1).padStart(2, '0') + '</p>' +
-      '<h3class="project-title">' + p.desc + '</h3>' +
+      '<h3 class="project-title">' + p.desc + '</h3>' +
       '<p class="project-desc">' + p.desc + '</p>' +
       '<div class="project-tags">' + p.tags.map((t) => '<span>' + t + '</span').join('') + '</div>';
     grid.appendChild(card);

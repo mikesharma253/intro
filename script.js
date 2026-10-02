@@ -82,8 +82,8 @@ const PROJECTS = [
 
   {
     title: 'MIKE — PORTFOLIO',
-    desc: 'A custom interactive portfolio built from scratch with a dark Halloween-themed interface, animations, custom cursor, and responsive design.',
-    tags: ['HTML', 'CSS', 'JAVASCRIPT'],
+    desc: 'A custom interactive portfolio built from scratch with a dark Halloween-themed, custom cursor, and responsive design.',
+    tags: ['HTML', 'CSS'],
     category: 'software'
   },
 
@@ -96,8 +96,8 @@ const PROJECTS = [
 
   {
     title: 'NYRO',
-    desc: 'An experimental project built to explore new ideas, interactions, and creative development beyond standard tutorials.',
-    tags: ['HTML', 'CSS', 'JAVASCRIPT'],
+    desc: 'An experimental project built to understand how to make website "AYANOKOJI THEMED ',
+    tags: ['HTML', 'CSS'],
     category: 'software'
   },
 
@@ -128,7 +128,6 @@ function renderProjects() {
       '<div class="project-tags">' +
       p.tags.map((t) => '<span>' + t + '</span>').join('') +
       '</div>';
-
     grid.appendChild(card);
   });
 }
@@ -143,12 +142,9 @@ filterButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
     filterButtons.forEach((b) => b.classList.remove('active'));
     btn.classList.add('active');
-
     const filter = btn.dataset.filter;
-
     document.querySelectorAll('.project-card').forEach((card) => {
       const show = filter === 'all' || card.dataset.category === filter;
-
       card.classList.toggle('hidden', !show);
     });
   });
@@ -163,28 +159,22 @@ const submitBtn = form.querySelector('button[type="submit"]');
 function validateField(field) {
   const wrapper = field.closest('.field');
   const valid = field.checkValidity();
-
   wrapper.classList.toggle('invalid', !valid);
-
   return valid;
 }
-
 form.querySelectorAll('input, textarea').forEach((field) => {
   field.addEventListener('blur', () => validateField(field));
 });
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-
   const fields = Array.from(form.querySelectorAll('input, textarea'));
   const allValid = fields.map(validateField).every(Boolean);
-
   if (!allValid) {
     status.textContent = 'Check the highlighted fields before sending.';
     status.classList.remove('success');
     return;
   }
-
   submitBtn.disabled = true;
   status.textContent = 'Sending…';
   status.classList.remove('success');
